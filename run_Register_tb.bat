@@ -1,8 +1,8 @@
 @echo off
 echo ==============================
-echo Compiling regfile_tb testbench
+echo Compiling Register_tb testbench
 echo ==============================
-iverilog -o regfile_tb tb\regfile_tb.v src\regfile.v
+iverilog -o Register_tb tb\Register_tb.v src\Register.v
 if errorlevel 1 (
     echo.
     echo ❌ Compile failed. Fix errors above.
@@ -12,9 +12,9 @@ if errorlevel 1 (
 
 echo.
 echo ======================
-echo Running regfile_tb ...
+echo Running Register_tb ...
 echo ======================
-vvp regfile_tb
+vvp Register_tb
 
 echo.
 echo ✅ Simulation finished.

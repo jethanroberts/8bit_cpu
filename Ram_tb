@@ -1,0 +1,272 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000023bf5a3a6e0 .scope module, "Ram_tb" "Ram_tb" 2 10;
+ .timescale -9 -9;
+P_0000023bf5a43a30 .param/l "DATA_WIDTH" 1 2 11, +C4<00000000000000000000000000001000>;
+P_0000023bf5a43a68 .param/l "MEM_SIZE" 1 2 12, +C4<00000000000000000000000000010000>;
+o0000023bf5a57488 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0000023bf5aaa040_0 name=_ivl_0
+v0000023bf5aa9c80_0 .var "addr", 7 0;
+v0000023bf5aa9d20_0 .var "bus_writable", 0 0;
+v0000023bf5aa9960_0 .var "clk", 0 0;
+RS_0000023bf5a57308 .resolv tri, L_0000023bf5aa9500, L_0000023bf5af34c0;
+v0000023bf5aa9820_0 .net8 "io_data", 7 0, RS_0000023bf5a57308;  2 drivers
+v0000023bf5aa9f00_0 .var "io_data_drive_enable", 0 0;
+v0000023bf5aa9140_0 .var "io_data_driver", 7 0;
+v0000023bf5aa9280_0 .var "jmp_imme", 0 0;
+v0000023bf5aa9320_0 .var "we", 0 0;
+L_0000023bf5aa9500 .functor MUXZ 8, o0000023bf5a57488, v0000023bf5aa9140_0, v0000023bf5aa9f00_0, C4<>;
+S_0000023bf5a3a060 .scope module, "dut" "Ram" 2 31, 3 1 0, S_0000023bf5a3a6e0;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "i_clk";
+    .port_info 1 /INPUT 1 "i_we";
+    .port_info 2 /INPUT 1 "i_bus_writable";
+    .port_info 3 /INPUT 1 "i_jmp_imme";
+    .port_info 4 /INPUT 8 "i_addr";
+    .port_info 5 /INOUT 8 "io_data";
+P_0000023bf5a438b0 .param/l "DATA_WIDTH" 0 3 2, +C4<00000000000000000000000000001000>;
+P_0000023bf5a438e8 .param/l "MEM_SIZE" 0 3 3, +C4<00000000000000000000000000010000>;
+L_0000023bf5aaa108 .functor BUFT 1, C4<0000>, C4<0>, C4<0>, C4<0>;
+v0000023bf5a37650_0 .net/2u *"_ivl_0", 3 0, L_0000023bf5aaa108;  1 drivers
+v0000023bf59f6f70_0 .net *"_ivl_11", 3 0, L_0000023bf5af3f60;  1 drivers
+v0000023bf59f9160_0 .net *"_ivl_12", 7 0, L_0000023bf5af3380;  1 drivers
+v0000023bf5a3a1f0_0 .net *"_ivl_14", 7 0, L_0000023bf5af3880;  1 drivers
+v0000023bf5a3a290_0 .net *"_ivl_17", 3 0, L_0000023bf5af2f20;  1 drivers
+v0000023bf5aa98c0_0 .net *"_ivl_18", 5 0, L_0000023bf5af2c00;  1 drivers
+v0000023bf5aa9aa0_0 .net *"_ivl_2", 7 0, L_0000023bf5af2e80;  1 drivers
+L_0000023bf5aaa198 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0000023bf5aa9780_0 .net *"_ivl_21", 1 0, L_0000023bf5aaa198;  1 drivers
+o0000023bf5a57158 .functor BUFZ 8, C4<zzzzzzzz>; HiZ drive
+; Elide local net with no drivers, v0000023bf5aa9fa0_0 name=_ivl_24
+v0000023bf5aa93c0_0 .net *"_ivl_5", 3 0, L_0000023bf5af3420;  1 drivers
+v0000023bf5aa9dc0_0 .net *"_ivl_6", 5 0, L_0000023bf5af37e0;  1 drivers
+L_0000023bf5aaa150 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0000023bf5aa9b40_0 .net *"_ivl_9", 1 0, L_0000023bf5aaa150;  1 drivers
+v0000023bf5aa9640_0 .net "i_addr", 7 0, v0000023bf5aa9c80_0;  1 drivers
+v0000023bf5aa9460_0 .net "i_bus_writable", 0 0, v0000023bf5aa9d20_0;  1 drivers
+v0000023bf5aa9e60_0 .net "i_clk", 0 0, v0000023bf5aa9960_0;  1 drivers
+v0000023bf5aa95a0_0 .net "i_jmp_imme", 0 0, v0000023bf5aa9280_0;  1 drivers
+v0000023bf5aa91e0_0 .net "i_we", 0 0, v0000023bf5aa9320_0;  1 drivers
+v0000023bf5aa9be0_0 .net8 "io_data", 7 0, RS_0000023bf5a57308;  alias, 2 drivers
+v0000023bf5aa9a00 .array "mem", 15 0, 7 0;
+v0000023bf5aa96e0_0 .net "out", 7 0, L_0000023bf5af3ba0;  1 drivers
+E_0000023bf5a3de90 .event posedge, v0000023bf5aa9e60_0;
+L_0000023bf5af2e80 .array/port v0000023bf5aa9a00, L_0000023bf5af37e0;
+L_0000023bf5af3420 .part v0000023bf5aa9c80_0, 0, 4;
+L_0000023bf5af37e0 .concat [ 4 2 0 0], L_0000023bf5af3420, L_0000023bf5aaa150;
+L_0000023bf5af3f60 .part L_0000023bf5af2e80, 0, 4;
+L_0000023bf5af3380 .concat [ 4 4 0 0], L_0000023bf5af3f60, L_0000023bf5aaa108;
+L_0000023bf5af3880 .array/port v0000023bf5aa9a00, L_0000023bf5af2c00;
+L_0000023bf5af2f20 .part v0000023bf5aa9c80_0, 0, 4;
+L_0000023bf5af2c00 .concat [ 4 2 0 0], L_0000023bf5af2f20, L_0000023bf5aaa198;
+L_0000023bf5af3ba0 .functor MUXZ 8, L_0000023bf5af3880, L_0000023bf5af3380, v0000023bf5aa9280_0, C4<>;
+L_0000023bf5af34c0 .functor MUXZ 8, o0000023bf5a57158, L_0000023bf5af3ba0, v0000023bf5aa9d20_0, C4<>;
+    .scope S_0000023bf5a3a060;
+T_0 ;
+    %wait E_0000023bf5a3de90;
+    %load/vec4 v0000023bf5aa91e0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %load/vec4 v0000023bf5aa9be0_0;
+    %load/vec4 v0000023bf5aa9640_0;
+    %parti/s 4, 0, 2;
+    %pad/u 6;
+    %ix/vec4 3;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v0000023bf5aa9a00, 0, 4;
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0000023bf5a3a6e0;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9960_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9320_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9d20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9280_0, 0, 1;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0000023bf5aa9c80_0, 0, 8;
+    %pushi/vec4 0, 0, 8;
+    %store/vec4 v0000023bf5aa9140_0, 0, 8;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9f00_0, 0, 1;
+    %pushi/vec4 47, 0, 8;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 14, 0, 8;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 61, 0, 8;
+    %ix/load 4, 2, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 30, 0, 8;
+    %ix/load 4, 3, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 45, 0, 8;
+    %ix/load 4, 4, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 56, 0, 8;
+    %ix/load 4, 5, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 112, 0, 8;
+    %ix/load 4, 6, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 0, 0, 8;
+    %ix/load 4, 7, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 0, 0, 8;
+    %ix/load 4, 8, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 0, 0, 8;
+    %ix/load 4, 9, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 0, 0, 8;
+    %ix/load 4, 10, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 0, 0, 8;
+    %ix/load 4, 11, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 0, 0, 8;
+    %ix/load 4, 12, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 0, 0, 8;
+    %ix/load 4, 13, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 1, 0, 8;
+    %ix/load 4, 14, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %pushi/vec4 4, 0, 8;
+    %ix/load 4, 15, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v0000023bf5aa9a00, 4, 0;
+    %delay 5, 0;
+    %load/vec4 v0000023bf5aa9be0_0;
+    %cmpi/ne 0, 255, 8;
+    %jmp/0xz  T_1.0, 6;
+    %vpi_call 2 73 "$display", "Assertion Failed at %2d in %m: dut.io_data != {DATA_WIDTH{1'bz}}", $time {0 0 0};
+    %vpi_call 2 74 "$finish" {0 0 0};
+T_1.0 ;
+    %delay 5, 0;
+    %pushi/vec4 15, 0, 8;
+    %store/vec4 v0000023bf5aa9c80_0, 0, 8;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023bf5aa9d20_0, 0, 1;
+    %delay 5, 0;
+    %load/vec4 v0000023bf5aa9be0_0;
+    %cmpi/ne 4, 0, 8;
+    %jmp/0xz  T_1.2, 6;
+    %vpi_call 2 79 "$display", "Assertion Failed at %2d in %m: dut.io_data != 8'b00000100", $time {0 0 0};
+    %vpi_call 2 80 "$finish" {0 0 0};
+T_1.2 ;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9d20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023bf5aa9f00_0, 0, 1;
+    %pushi/vec4 51, 0, 8;
+    %store/vec4 v0000023bf5aa9140_0, 0, 8;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023bf5aa9320_0, 0, 1;
+    %pushi/vec4 10, 0, 8;
+    %store/vec4 v0000023bf5aa9c80_0, 0, 8;
+    %delay 10, 0;
+    %ix/load 4, 10, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v0000023bf5aa9a00, 4;
+    %cmpi/ne 51, 0, 8;
+    %jmp/0xz  T_1.4, 6;
+    %vpi_call 2 88 "$display", "Assertion Failed at %2d in %m: dut.mem[10] != 8'b00110011", $time {0 0 0};
+    %vpi_call 2 89 "$finish" {0 0 0};
+T_1.4 ;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9f00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9320_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023bf5aa9d20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023bf5aa9280_0, 0, 1;
+    %delay 10, 0;
+    %load/vec4 v0000023bf5aa9be0_0;
+    %cmpi/ne 3, 0, 8;
+    %jmp/0xz  T_1.6, 6;
+    %vpi_call 2 96 "$display", "Assertion Failed at %2d in %m: dut.io_data != 8'b00000011", $time {0 0 0};
+    %vpi_call 2 97 "$finish" {0 0 0};
+T_1.6 ;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9d20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000023bf5aa9280_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000023bf5aa9f00_0, 0, 1;
+    %pushi/vec4 15, 0, 8;
+    %store/vec4 v0000023bf5aa9140_0, 0, 8;
+    %pushi/vec4 1, 0, 8;
+    %store/vec4 v0000023bf5aa9c80_0, 0, 8;
+    %delay 5, 0;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v0000023bf5aa9a00, 4;
+    %cmpi/ne 14, 0, 8;
+    %jmp/0xz  T_1.8, 6;
+    %vpi_call 2 105 "$display", "Assertion Failed at %2d in %m: dut.mem[1] != 8'b0000_1110", $time {0 0 0};
+    %vpi_call 2 106 "$finish" {0 0 0};
+T_1.8 ;
+    %delay 5, 0;
+    %vpi_call 2 106 "$display", "TestBench Passed!" {0 0 0};
+    %vpi_call 2 107 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0000023bf5a3a6e0;
+T_2 ;
+    %delay 5, 0;
+    %load/vec4 v0000023bf5aa9960_0;
+    %inv;
+    %store/vec4 v0000023bf5aa9960_0, 0, 1;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0000023bf5a3a6e0;
+T_3 ;
+    %wait E_0000023bf5a3de90;
+    %vpi_call 2 113 "$display", "Clock toggled at time %2t, clk = %0b, we = %0b, bus_writable = %0b, jmp_imme = %0b, addr = %8b, io_data = %8b", $time, v0000023bf5aa9960_0, v0000023bf5aa9320_0, v0000023bf5aa9d20_0, v0000023bf5aa9280_0, v0000023bf5aa9c80_0, v0000023bf5aa9820_0 {0 0 0};
+    %jmp T_3;
+    .thread T_3;
+    .scope S_0000023bf5a3a6e0;
+T_4 ;
+    %vpi_call 2 117 "$dumpfile", "ram.vcd" {0 0 0};
+    %vpi_call 2 118 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb\Ram_tb.v";
+    "src\Ram.v";

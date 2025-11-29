@@ -19,7 +19,7 @@ module Register #(
             register <= {DATA_WIDTH{1'b0}}; //resets all bits to 0
         end 
         else if (i_we) begin
-            register <= io_data; //if write enabled, on posedge of clk reg = io_data
+            register <= io_data; //if write enabled, on posedge of clk register = io_data
         end 
     end
 assign o_data = register;
