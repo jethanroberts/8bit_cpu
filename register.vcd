@@ -1,0 +1,113 @@
+$date
+	Fri Nov 28 21:39:28 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module register_tb $end
+$var wire 8 ! io_data [7:0] $end
+$var wire 8 " o_data [7:0] $end
+$var parameter 32 # DATA_WIDTH $end
+$var reg 1 $ bus_writable $end
+$var reg 1 % clk $end
+$var reg 1 & io_data_drive_enable $end
+$var reg 8 ' io_data_driver [7:0] $end
+$var reg 1 ( rst $end
+$var reg 1 ) we $end
+$scope module dut $end
+$var wire 1 $ i_bus_writable $end
+$var wire 1 % i_clk $end
+$var wire 1 ( i_rst $end
+$var wire 1 ) i_we $end
+$var wire 8 * io_data [7:0] $end
+$var wire 8 + o_data [7:0] $end
+$var parameter 32 , DATA_WIDTH $end
+$var reg 8 - register [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 ,
+b1000 #
+$end
+#0
+$dumpvars
+b0 -
+b0 +
+bz *
+0)
+1(
+b0 '
+0&
+0%
+0$
+b0 "
+bz !
+$end
+#5
+1%
+0(
+#10
+0%
+#15
+b10100101 "
+b10100101 +
+b10100101 -
+b10100101 !
+b10100101 *
+1%
+1)
+1&
+b10100101 '
+#20
+0%
+#25
+b10100101 !
+b10100101 *
+1%
+0)
+1$
+b0 '
+0&
+#30
+0%
+#35
+bz !
+bz *
+1%
+0$
+#40
+0%
+#45
+b0 "
+b0 +
+b0 -
+b0 !
+b0 *
+1%
+1)
+1&
+#50
+0%
+#55
+b0 !
+b0 *
+1%
+0)
+1$
+b10100101 '
+0&
+#60
+0%
+#65
+b10100101 !
+b10100101 *
+1%
+0$
+1&
+#70
+0%

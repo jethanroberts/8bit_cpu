@@ -1,4 +1,4 @@
-module register #(
+module Register #(
     parameter DATA_WIDTH = 8
 ) (
     // input
