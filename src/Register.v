@@ -16,12 +16,12 @@ module Register #(
 
     always @(posedge i_clk or posedge i_rst) begin
         if (i_rst) begin  
-            register <= {DATA_WIDTH{1'b0}}; //resets all bits to 0
+            register <= {DATA_WIDTH{1'b0}};                                 //resets all bits to 0
         end 
         else if (i_we) begin
-            register <= io_data; //if write enabled, on posedge of clk register = io_data
+            register <= io_data;                                            //if write enabled, on posedge of clk register = io_data
         end 
     end
 assign o_data = register;
-assign io_data = (i_bus_writable) ? register : {DATA_WIDTH{1'bz}}; //only drives bus when allowed
+assign io_data = (i_bus_writable) ? register : {DATA_WIDTH{1'bz}};          //when bus is writeable io_data = register
 endmodule

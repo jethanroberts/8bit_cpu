@@ -17,15 +17,15 @@ module Alu #(
     reg carry;
     reg [DATA_WIDTH-1:0] tmp;
 
-    always @ (posedge i_clk or posedge i_rst) begin
+    always @ (posedge i_clk or posedge i_rst) begin 
         if (i_rst) begin
-            o_jc <= 1'b0;
+            o_jc <= 1'b0;                   //rst will set both jc and jz to 0
             o_jz <= 1'b0;
         end
         else if (i_bus_writable) begin
-            o_jc <= carry;
+            o_jc <= carry;                  // when carry bit is needed for adition or subtraction it will be stored
             if (tmp == 0 && !i_opcode)
-            o_jz <= 1'b1;
+            o_jz <= 1'b1;                   // when a - b = 0 jz will be set to 1
             else
             o_jz <= 1'b0;
         end
@@ -33,10 +33,10 @@ module Alu #(
 
     always@(*) begin
         if (i_opcode) begin
-            {carry,tmp} = i_a + i_b;
+            {carry,tmp} = i_a + i_b;        //addition
         end
         else begin
-            {carry,tmp} = i_a - i_b;
+            {carry,tmp} = i_a - i_b;        //subtraction
         end
     end
 
