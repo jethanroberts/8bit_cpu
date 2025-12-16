@@ -56,7 +56,6 @@ module Controller #(
     always @ (posedge i_clk or posedge i_rst) begin
         if (i_rst) begin 
             state <= PC_OUT;
-            next_state <= PC_OUT;
             opcode <= 1'b0;
         end
         else begin

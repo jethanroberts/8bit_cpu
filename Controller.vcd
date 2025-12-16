@@ -1,0 +1,301 @@
+$date
+	Thu Dec 11 15:27:47 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module controller_tb $end
+$var wire 8 ! write_enable_bus [7:0] $end
+$var wire 1 " we_mem $end
+$var wire 1 # opcode $end
+$var wire 1 $ load_tmp $end
+$var wire 1 % load_pc $end
+$var wire 1 & load_mar $end
+$var wire 1 ' load_inst $end
+$var wire 1 ( load_acc $end
+$var wire 1 ) jmp $end
+$var wire 1 * imme $end
+$var parameter 8 + ACC $end
+$var parameter 8 , ALU $end
+$var parameter 32 - DATA_WIDTH $end
+$var parameter 8 . DECODER $end
+$var parameter 8 / INCREMENTER $end
+$var parameter 8 0 MEM $end
+$var parameter 4 1 OP_ADD $end
+$var parameter 4 2 OP_IMME $end
+$var parameter 4 3 OP_JC $end
+$var parameter 4 4 OP_JMP $end
+$var parameter 4 5 OP_JZ $end
+$var parameter 4 6 OP_LOAD $end
+$var parameter 4 7 OP_STORE $end
+$var parameter 4 8 OP_SUB $end
+$var parameter 8 9 PC $end
+$var parameter 8 : TMP $end
+$var reg 1 ; clk $end
+$var reg 8 < inst [7:0] $end
+$var reg 1 = jc $end
+$var reg 1 > jz $end
+$var reg 1 ? rst $end
+$scope module dut $end
+$var wire 1 ; i_clk $end
+$var wire 8 @ i_inst [7:0] $end
+$var wire 1 = i_jc $end
+$var wire 1 > i_jz $end
+$var wire 1 ? i_rst $end
+$var parameter 8 A ACC $end
+$var parameter 8 B ALU $end
+$var parameter 32 C DATA_WIDTH $end
+$var parameter 3 D DECODE $end
+$var parameter 8 E DECODER $end
+$var parameter 3 F EXECUTE $end
+$var parameter 8 G INCREMENTER $end
+$var parameter 3 H INCREMENT_PC $end
+$var parameter 3 I LOAD_ACC $end
+$var parameter 3 J LOAD_IR $end
+$var parameter 3 K LOAD_TMP $end
+$var parameter 8 L MEM $end
+$var parameter 4 M OP_ADD $end
+$var parameter 4 N OP_IMME $end
+$var parameter 4 O OP_JC $end
+$var parameter 4 P OP_JMP $end
+$var parameter 4 Q OP_JZ $end
+$var parameter 4 R OP_LOAD $end
+$var parameter 4 S OP_STORE $end
+$var parameter 4 T OP_SUB $end
+$var parameter 8 U PC $end
+$var parameter 3 V PC_OUT $end
+$var parameter 3 W STORE_MEM $end
+$var parameter 8 X TMP $end
+$var reg 3 Y next_state [2:0] $end
+$var reg 1 * o_imme $end
+$var reg 1 ) o_jmp $end
+$var reg 1 ( o_load_acc $end
+$var reg 1 ' o_load_inst $end
+$var reg 1 & o_load_mar $end
+$var reg 1 % o_load_pc $end
+$var reg 1 $ o_load_tmp $end
+$var reg 1 # o_opcode $end
+$var reg 1 " o_we_mem $end
+$var reg 8 Z o_write_enable_bus [7:0] $end
+$var reg 1 [ opcode $end
+$var reg 3 \ state [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100000 X
+b110 W
+b0 V
+b1 U
+b1 T
+b11 S
+b10 R
+b111 Q
+b101 P
+b110 O
+b100 N
+b0 M
+b100 L
+b100 K
+b1 J
+b101 I
+b111 H
+b10 G
+b11 F
+b1000000 E
+b10 D
+b1000 C
+b1000 B
+b10000 A
+b100000 :
+b1 9
+b1 8
+b11 7
+b10 6
+b111 5
+b101 4
+b110 3
+b100 2
+b0 1
+b100 0
+b10 /
+b1000000 .
+b1000 -
+b1000 ,
+b10000 +
+$end
+#0
+$dumpvars
+b0 \
+0[
+b1 Z
+b1 Y
+b0 @
+1?
+0>
+0=
+b0 <
+0;
+0*
+0)
+0(
+0'
+1&
+0%
+0$
+0#
+0"
+b1 !
+$end
+#5
+1;
+#10
+0?
+0;
+#15
+b10 Y
+1'
+b100 !
+b100 Z
+0&
+b1 \
+1;
+#20
+0;
+#25
+b100 Y
+1&
+0'
+b10 \
+1;
+#30
+0;
+#35
+b11 Y
+1$
+0&
+1[
+b100 \
+1;
+#40
+0;
+#45
+b111 Y
+1(
+b1000 !
+b1000 Z
+1#
+0$
+b11 \
+1;
+#50
+0;
+#55
+b0 Y
+1%
+b10 !
+b10 Z
+0(
+0#
+b111 \
+1;
+#60
+0;
+#65
+b1 Y
+1&
+b1 !
+b1 Z
+0%
+b0 \
+1;
+#70
+1&
+b1 Y
+b100000 <
+b100000 @
+0;
+#75
+b10 Y
+1'
+b100 !
+b100 Z
+0&
+b1 \
+1;
+#80
+0;
+#85
+b101 Y
+1&
+0'
+b10 \
+1;
+#90
+0;
+#95
+b111 Y
+1(
+0&
+0[
+b101 \
+1;
+#100
+0;
+#105
+b0 Y
+1%
+b10 !
+b10 Z
+0(
+b111 \
+1;
+#110
+0;
+#115
+b1 Y
+1&
+b1 !
+b1 Z
+0%
+b0 \
+1;
+#120
+0;
+#125
+b10 Y
+1'
+b100 !
+b100 Z
+0&
+b1 \
+1;
+#130
+1'
+b10 Y
+b1000000 <
+b1000000 @
+0;
+#135
+b111 Y
+1(
+1*
+0'
+b10 \
+1;
+#140
+0;
+#145
+b0 Y
+1%
+b10 !
+b10 Z
+0*
+0(
+b111 \
+1;
+#147
