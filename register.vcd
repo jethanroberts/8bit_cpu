@@ -1,5 +1,5 @@
 $date
-	Fri Jan 09 10:47:08 2026
+	Fri Jan 09 11:28:37 2026
 $end
 $version
 	Icarus Verilog
@@ -9,7 +9,7 @@ $timescale
 $end
 $scope module register_tb $end
 $var wire 8 ! io_data [7:0] $end
-$var wire 8 " o_data [7:0] $end
+$var wire 8 " o_pc [7:0] $end
 $var parameter 32 # DATA_WIDTH $end
 $var reg 1 $ bus_writable $end
 $var reg 1 % clk $end
@@ -23,7 +23,7 @@ $var wire 1 % i_clk $end
 $var wire 1 ( i_rst $end
 $var wire 1 ) i_we $end
 $var wire 8 * io_data [7:0] $end
-$var wire 8 + o_data [7:0] $end
+$var wire 8 + o_pc [7:0] $end
 $var parameter 32 , DATA_WIDTH $end
 $var reg 8 - register [7:0] $end
 $upscope $end

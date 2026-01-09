@@ -15,7 +15,7 @@
    reg we; 
    reg bus_writable;  
 
-   wire [7:0] o_data; 
+   wire [7:0] o_pc; 
 
    reg [DATA_WIDTH-1:0] io_data_driver; // Register to drive the inout signal 
    wire [DATA_WIDTH-1:0] io_data;       // Wire to read the inout signal 
@@ -29,7 +29,7 @@
      .i_rst(rst), 
      .i_we(we), 
      .i_bus_writable(bus_writable), 
-     .o_data(o_data), 
+     .o_pc(o_pc), 
      .io_data(io_data) 
    ); 
 
@@ -51,12 +51,12 @@
      	io_data_driver = 8'hA5; 
          io_data_drive_enable = 1'b1; 
         	we = 1'b1; 
-     	`assert(dut.o_data, 8'b00000000); 
+     	`assert(dut.o_pc, 8'b00000000); 
      #10 io_data_drive_enable = 0; 
      	io_data_driver = 8'h00; 
      	bus_writable = 1'b1; 
  		we = 1'b0; 
-     	`assert(dut.o_data, 8'b10100101); 
+     	`assert(dut.o_pc, 8'b10100101); 
      	`assert(dut.io_data, 8'b10100101); 
      	`assert(dut.i_bus_writable, 1'b1); 
      	`assert(io_data, 8'b10100101); 
@@ -65,20 +65,20 @@
      	io_data_driver = 8'h00; 
      	bus_writable = 1'b0; 
      	we = 1'b0; 
-     	`assert(dut.o_data, 8'b10100101); 
+     	`assert(dut.o_pc, 8'b10100101); 
      	`assert(dut.io_data, 8'b10100101); 
      #10 
      	io_data_drive_enable = 1; 
      	io_data_driver = 8'h00; 
      	bus_writable = 1'b0; 
      	we = 1'b1; 
-     	`assert(dut.o_data, 8'b10100101); 
+     	`assert(dut.o_pc, 8'b10100101); 
      #10 
      	io_data_drive_enable = 0; 
      	io_data_driver = 8'hA5; 
      	bus_writable = 1'b1; 
      	we = 1'b0; 
-     	`assert(dut.o_data, 8'b00000000); 
+     	`assert(dut.o_pc, 8'b00000000); 
      	`assert(dut.io_data, 8'b00000000); 
      	`assert(io_data, 8'b00000000); 
  	#5; 
@@ -90,7 +90,7 @@
    always #5 clk = ~clk; 
 
    always @(posedge clk) begin 
-       $display("Clock toggled at time %2t, clk = %0b, rst = %0b, we = %0b, bus_writable = %0b, o_data = %8b, io_data = %8b",		$time, clk, rst, we, bus_writable, o_data, io_data); 
+       $display("Clock toggled at time %2t, clk = %0b, rst = %0b, we = %0b, bus_writable = %0b, o_pc = %8b, io_data = %8b",		$time, clk, rst, we, bus_writable, o_pc, io_data); 
    end 
 
    initial begin 
