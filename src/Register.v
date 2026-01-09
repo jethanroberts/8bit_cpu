@@ -7,7 +7,7 @@ module Register #(
     input wire i_we,
     input wire i_bus_writable,
     // output
-    output [DATA_WIDTH-1 : 0] o_data,
+    output [DATA_WIDTH-1 : 0] o_pc,
     // input and output
     inout [DATA_WIDTH-1 : 0] io_data
 );
@@ -22,6 +22,6 @@ module Register #(
             register <= io_data;                                            //if write enabled, on posedge of clk register = io_data
         end 
     end
-assign o_data = register;
+assign o_pc = register;
 assign io_data = (i_bus_writable) ? register : {DATA_WIDTH{1'bz}};          //when bus is writeable io_data = register
 endmodule
